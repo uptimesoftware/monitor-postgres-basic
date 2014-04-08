@@ -15,7 +15,7 @@
 		<requires_agent_scripts>false</requires_agent_scripts>
 	</grid_info>	
     <elements>
-        <element name="process" parameter_type="input" data_type="string" gui_basic="1" range_type="0">
+        <element name="process_linux" parameter_type="input" data_type="string" gui_basic="1" range_type="0" hidden="true">
             <control_options> size:40 </control_options>
             <default_value>plugins/scripts/monitor-postgres-basic/monitor-postgres-basic.sh</default_value>
             <short_description>Script Name</short_description>
@@ -29,7 +29,22 @@
             <gui_type>
                 <string/>
             </gui_type>
-        </element>              
+        </element>
+        <element name="process_windows" parameter_type="input" data_type="string" gui_basic="1" range_type="0" hidden="true">
+            <control_options> size:40 </control_options>
+            <default_value>plugins/scripts/monitor-postgres-basic/monitor-postgres-basic.bat</default_value>
+            <short_description>Script Name</short_description>
+            <long_description>Name of the script/binary/process to be executed by up.time </long_description>
+            <validation_rule>
+                <alphanumeric/>
+            </validation_rule>
+            <error_message>
+                <alphanumeric>required field</alphanumeric>
+            </error_message>
+            <gui_type>
+                <string/>
+            </gui_type>
+        </element>  		
 		<element name="dbport" parameter_type="input" data_type="integer" gui_basic="1"
 				 range_type="0" units="">
 			<control_options>size:10</control_options>
